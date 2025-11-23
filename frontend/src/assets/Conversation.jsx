@@ -1,5 +1,3 @@
-import React from "react";
-
 const Conversation = () => {
   return (
     <>
@@ -9,7 +7,14 @@ const Conversation = () => {
             <img src="" alt="user avatar" />
           </div>
         </div>
+        <div className="flex flex-col flex-1">
+          <div className="flex fap-3 justify-between">
+            <p className="font-bold  text-gray-200">Icarus</p>
+            <span className="text-xl ">🍚</span>
+          </div>
+        </div>
       </div>
+      <div className="divider my-0 py-0 h-1"></div>
     </>
   );
 };
