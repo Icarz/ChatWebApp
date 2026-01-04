@@ -9,7 +9,7 @@ const MessageContainer = () => {
   useEffect(() => {
     // Cleanup on unmount//
     return () => setSelectedConversation(null);
-  }, [selectedConversation]);
+  }, []);
   return (
     <div className="md:min-w-[450px] flex flex-col">
       {!selectedConversation ? (
