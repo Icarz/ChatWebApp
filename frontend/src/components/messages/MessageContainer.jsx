@@ -7,7 +7,6 @@ import { useEffect } from "react";
 const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
   useEffect(() => {
-    // Cleanup on unmount//
     return () => setSelectedConversation(null);
   }, []);
   return (
