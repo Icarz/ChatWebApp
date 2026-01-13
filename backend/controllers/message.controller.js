@@ -28,6 +28,11 @@ export const sendMessage = async (req, res) => {
 
     await Promise.all([conversation.save(), newMessage.save()]);
 
+    const receiverSocketId = req.getReceiverSocketId(receiverId);
+    if (receiverSocketId) {
+      io.to(receiverSocketId).emit("newMessage", newMessage);
+    }
+
     res.status(200).json(newMessage);
   } catch (error) {
     console.log("Error in sendMessage controller:", error);
