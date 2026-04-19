@@ -1,36 +1,35 @@
 const Gender = ({ onCheckboxChange, selectedGender }) => {
   return (
-    <div className="flex justify-between">
-      <div className="form-control">
-        <label
-          className={`label gap-2 cursor-pointer ${
-            selectedGender === "male" ? "selected" : ""
-          }`}
+    <div style={{ display: "flex", gap: "10px" }}>
+      {["male", "female"].map((g) => (
+        <button
+          key={g}
+          type="button"
+          onClick={() => onCheckboxChange(g)}
+          style={{
+            flex: 1,
+            padding: "9px 12px",
+            borderRadius: "8px",
+            border:
+              selectedGender === g
+                ? "1px solid var(--border-accent)"
+                : "1px solid var(--border)",
+            background:
+              selectedGender === g ? "var(--accent-dim)" : "var(--bg-surface)",
+            color:
+              selectedGender === g ? "var(--accent)" : "var(--text-secondary)",
+            fontFamily: "'Syne', sans-serif",
+            fontWeight: 600,
+            fontSize: "0.8rem",
+            letterSpacing: "0.05em",
+            textTransform: "uppercase",
+            cursor: "pointer",
+            transition: "all 0.15s",
+          }}
         >
-          <span className="label-text mx-1">Male</span>
-          <input
-            type="checkbox"
-            className="checkbox border-slate-900 mt-2"
-            checked={selectedGender === "male"}
-            onChange={() => onCheckboxChange("male")}
-          />
-        </label>
-      </div>
-      <div className="form-control">
-        <label
-          className={`label gap-2 cursor-pointer ${
-            selectedGender === "female" ? "selected" : ""
-          }`}
-        >
-          <span className="label-text mx-1">Female</span>
-          <input
-            type="checkbox"
-            className="checkbox border-slate-900 mt-2"
-            checked={selectedGender === "female"}
-            onChange={() => onCheckboxChange("female")}
-          />
-        </label>
-      </div>
+          {g === "male" ? "♂ Male" : "♀ Female"}
+        </button>
+      ))}
     </div>
   );
 };

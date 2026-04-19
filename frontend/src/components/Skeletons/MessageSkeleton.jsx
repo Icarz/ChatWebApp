@@ -1,20 +1,28 @@
-const MessageSkeleton = () => {
+const MessageSkeleton = ({ fromMe = false }) => {
   return (
-    <>
-      <div className="flex gap-3 items-center">
-        <div className="skeleton w-10 h-10 rounded-full shrink-0"></div>
-        <div className="flex flex-col gap-1">
-          <div className="skeleton h-4 w-40"></div>
-          <div className="skeleton h-4 w-40"></div>
-        </div>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "flex-end",
+        gap: "8px",
+        flexDirection: fromMe ? "row-reverse" : "row",
+      }}
+    >
+      <div
+        className="skeleton-block"
+        style={{ width: "28px", height: "28px", borderRadius: "50%", flexShrink: 0 }}
+      />
+      <div style={{ display: "flex", flexDirection: "column", gap: "5px", maxWidth: "55%" }}>
+        <div
+          className="skeleton-block"
+          style={{ height: "38px", width: fromMe ? "180px" : "220px", borderRadius: "12px" }}
+        />
+        <div
+          className="skeleton-block"
+          style={{ height: "8px", width: "50px", borderRadius: "4px", alignSelf: fromMe ? "flex-end" : "flex-start" }}
+        />
       </div>
-      <div className="flex gap-3 items-center justify-end">
-        <div className="flex flex-col gap-1">
-          <div className="skeleton h-4 w-40"></div>
-        </div>
-        <div className="skeleton w-10 h-10 rounded-full shrink-0"></div>
-      </div>
-    </>
+    </div>
   );
 };
 

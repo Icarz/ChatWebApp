@@ -45,7 +45,7 @@ const useSignup = () => {
       setAuthUser(data);
     } catch (error) {
       console.error(error);
-      toast.error("Signup failed. Please try again.");
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }

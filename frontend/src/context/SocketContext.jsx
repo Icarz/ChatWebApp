@@ -13,10 +13,10 @@ export const useSocketContext = () => {
 export const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
-  const authUser = useAuthContext();
+  const { authUser } = useAuthContext();
   useEffect(() => {
     if (authUser) {
-      const socket = io("http://localhost:5000", {
+      const socket = io(import.meta.env.VITE_BACKEND_URL || "http://localhost:5000", {
         query: {
           userId: authUser._id,
         },
