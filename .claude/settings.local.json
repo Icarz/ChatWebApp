@@ -8,7 +8,9 @@
       "Bash(vercel deploy:*)",
       "Bash(vercel env:*)",
       "Bash(railway variable:*)",
-      "Bash(railway redeploy:*)"
+      "Bash(railway redeploy:*)",
+      "mcp__plugin_vercel_vercel__list_teams",
+      "mcp__plugin_vercel_vercel__list_deployments"
     ]
   }
 }
