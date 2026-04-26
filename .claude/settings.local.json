@@ -11,7 +11,9 @@
       "Bash(railway redeploy:*)",
       "mcp__plugin_vercel_vercel__list_teams",
       "mcp__plugin_vercel_vercel__list_deployments",
-      "mcp__plugin_vercel_vercel__get_project"
+      "mcp__plugin_vercel_vercel__get_project",
+      "mcp__plugin_vercel_vercel__web_fetch_vercel_url",
+      "Bash(npm i:*)"
     ]
   }
 }
